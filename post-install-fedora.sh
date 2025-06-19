@@ -20,4 +20,13 @@ sudo dnf install -y rpmfusion-\*-appstream-data
 sudo dnf swap -y ffmpeg-free ffmpeg --allowerasing
 sudo dnf install -y intel-media-driver
 
-echo "✅ Post-install setup complete!"
+echo "✅ Base Fedora setup complete!"
+
+# Prompt user for Hyprland installation
+read -p "🚀 Do you want to install Hyprland now? (y/n): " answer
+if [[ "$answer" =~ ^[Yy]$ ]]; then
+    echo "📥 Installing Hyprland with JaKooLit's script..."
+    sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Fedora-Hyprland/main/auto-install.sh)
+else
+    echo "❌ Skipped Hyprland installation."
+fi
