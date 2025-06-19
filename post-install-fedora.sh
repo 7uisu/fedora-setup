@@ -22,10 +22,11 @@ sudo dnf install -y intel-media-driver
 
 echo "✅ Base Fedora setup complete!"
 
-# Prompt user for Hyprland installation
-read -p "🚀 Do you want to install Hyprland now? (y/n): " answer
+# Optional: Hyprland installation prompt
+echo ""
+read -p "🚀 Do you want to install Hyprland now (JaKooLit script + dotfiles)? (y/n): " answer
 if [[ "$answer" =~ ^[Yy]$ ]]; then
-    echo "📥 Installing Hyprland with JaKooLit's script..."
+    echo "📥 Installing Hyprland from JaKooLit's auto-install script..."
     sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Fedora-Hyprland/main/auto-install.sh)
 else
     echo "❌ Skipped Hyprland installation."
