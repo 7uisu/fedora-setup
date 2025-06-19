@@ -2,6 +2,12 @@
 
 This script automates the post-installation setup for Fedora.
 
+# Step 0: Prepare Fedora Server
+sudo dnf update -y
+sudo dnf install -y curl git
+
+THEN RUN THE SCRIPT
+
 ✅ Features:
 - Enables RPM Fusion (Free & Non-Free)
 - Tweaks DNF for faster downloads
