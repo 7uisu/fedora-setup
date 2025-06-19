@@ -6,11 +6,15 @@ A simple script to automate post-installation setup for **Fedora Server** or **m
 
 ## ⚙️ Step 0: Prepare Fedora
 
-Before using the script, update your system and install required tools:
+Before using the script, update your system and install required tools curl and git, then the
+bash <(curl -sL https://raw.githubusercontent.com/7uisu/fedora-setup/main/post-install-fedora.sh):
 
 ```bash
 sudo dnf update -y
 sudo dnf install -y curl git
+
+bash <(curl -sL https://raw.githubusercontent.com/7uisu/fedora-setup/main/post-install-fedora.sh)
+```
 
 ---
 
