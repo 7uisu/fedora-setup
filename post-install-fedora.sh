@@ -15,10 +15,15 @@ sudo dnf install -y \
   https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
   https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-echo "📦 Installing appstream data and media drivers..."
+echo "📦 Installing appstream data, additional codec and media drivers..."
 sudo dnf install -y rpmfusion-\*-appstream-data
 sudo dnf swap -y ffmpeg-free ffmpeg --allowerasing
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf install -y intel-media-driver
+
+echo "📦 for DVD (I know, who uses it, but you never know)"
+sudo dnf install rpmfusion-free-release-tainted
+sudo dnf install libdvdcss
 
 echo "✅ Base Fedora setup complete!"
 echo ""
