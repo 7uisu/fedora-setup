@@ -16,6 +16,7 @@ sudo dnf install -y \
   https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 echo "📦 Installing appstream data, additional codec and media drivers..."
+sudo dnf update @core -y
 sudo dnf install -y rpmfusion-\*-appstream-data
 sudo dnf swap -y ffmpeg-free ffmpeg --allowerasing
 sudo dnf update -y @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
